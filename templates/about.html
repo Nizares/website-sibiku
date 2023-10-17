@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/dist/output.css" rel="stylesheet">
+    <title>About</title>
+</head>
+
+<body>
+    <section class="min-h-[90vh]">
+        <!-- navbar -->
+        <nav class="bg-cs-brown flex justify-around items-center">
+            <h1 class="text-3xl font-semibold">SIBIku</h1>
+            <div class="flex">
+                <!-- <a href="/" class="p-8 hover:bg-cs-light-brown transition ease-in-out">Home</a>
+                <a href="{{ url_for('about') }}" class="p-8 hover:bg-cs-light-brown transition ease-in-out">About</a> -->
+                <a href="index.html" class="p-8 hover:bg-cs-light-brown transition ease-in-out">Beranda</a>
+                <a href="about.html" class="p-8 hover:bg-cs-light-brown transition ease-in-out">Tentang</a>
+                <a href="classify.html" class="p-8 hover:bg-cs-light-brown transition ease-in-out">Belajar SIBI</a>
+                <a href="quiz.html" class="p-8 hover:bg-cs-light-brown transition ease-in-out">Kuis</a>
+                <!-- <a href="" class="p-8 hover:bg-cs-light-brown transition ease-in-out">Classify</a> -->
+            </div>
+        </nav>
+        <!-- content1 -->
+        <section class="bg-cs-light-brown" id="id-invisi">
+            </div>
+            <div class="flex flex-row w-full">
+                <div class="basis-1/2 pb-10 ml-20">
+                    <div class="mt-10 font-semibold text-5xl">
+                        SIBI
+                    </div>
+                    <div class="text-lg">
+                        Sistem Isyarat Bahasa Indonesia
+                    </div>
+                    <div class="mt-2 text-justify">
+                        SIBI (Sistem Isyarat Bahasa Indonesia) adalah bahasa isyarat yang mengadaptasi gerakan ASL
+                        (American Sign Language). Bahasa iyarat abjad SIBI memiliki 26 gerakan yang mewakili 26 alphabet
+                        yang terdiri dari 24 peragaan berupagerakan pasif serta 2 peragaan berupa gerakan aktif (J dan
+                        Z) menggunakan satu tangan. SIBI sering digunakan dalam komunikasi formal, dalam penerapannya
+                        digunakan dalam proses belajar mengajar di SLB (Sekolah Luar Biasa). Peraturan Menteri
+                        Pendidikan Republik Indonesia
+                        nomor 0161/U/1994 mengatur tentang penggunaan SIBI dalam SLB.
+                    </div>
+                </div>
+                <div class="basis-1/2 pb-10 mx-20">
+                    <div class="mt-10 font-semibold text-5xl">
+                        About SIBIku
+                    </div>
+                    <div class="text-lg">
+                        SIBIku
+                    </div>
+                    <div class="mt-2 text-justify">
+                        SIBIku adalah website yang dibuat untuk memberi wawasan kepada orang-orang yang ingin
+                        mempelajari atau ingin
+                        tahu tentang SIBI (Sistem Isyarat Bahasa Indonesia) khususnya dalam abjad agar bisa digunakan
+                        dalam komunikasi bersama teman tuli atau penyandang tuna rungu dan membantu guru dan murid dalam
+                        pembelajaran pada SLB (Sekolah Luar Biasa).
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- content 2 -->
+        <section class="bg-cs-sp-light-brown h-[300px] flex items-center justify-center">
+            <a href="#id-invisi"
+                class="basis-1/4 h-full relative overflow-hidden flex justify-center items-center transition duration-150 ease-in-out transform hover:scale-105">
+                <img src="/static/images/ocnizarhand.jpg"
+                    class="absolute rounded-[3rem] brightness-80 opacity-75 object-cover p-8">
+                <p class="font-semibold text-center absolute text-4xl">
+                    About SIBIku
+                </p>
+            </a>
+            <a href="#bentuk-bentuk"
+                class="basis-1/4 h-full relative overflow-hidden flex justify-center items-center transition duration-150 ease-in-out transform hover:scale-105">
+                <img src="/static/images/ocnizarhand.jpg"
+                    class="absolute rounded-[3rem] brightness-80 opacity-75 object-cover p-8">
+                <p class="font-semibold text-center absolute text-4xl">
+                    Abjad SIBI!
+                </p>
+            </a>
+            <a href="classify.html"
+                class="basis-1/4 h-full relative overflow-hidden flex justify-center items-center transition duration-150 ease-in-out transform hover:scale-105">
+                <img src="/static/images/ocnizarhand.jpg"
+                    class="absolute rounded-[3rem] brightness-80 opacity-75 object-cover p-8">
+                <p class="font-semibold text-center absolute text-4xl">
+                    Belajar SIBI!
+                </p>
+            </a>
+        </section>
+
+        <!-- content 3 -->
+        <section class="bg-cs-light-brown">
+            <div class="font-semibold text-4xl text-center pt-5" id="bentuk-bentuk">
+                Abjad SIBI!
+            </div>
+            <div class="font-semibold text-lg text-center pt-2" id="bentuk-bentuk">
+                Abjad menggunakan SIBI dari A sampai Z
+            </div>
+            <!-- sub content 3.1 -->
+            <section class="bg-cs-light-brown hidden" id="section-box1">
+                <div class="flex flex-row justify-center items-center mt-5">
+                    <div class="rounded-lg border-4 border-cs-brown mr-10">
+                        <video id="classUrlVideo" width="250" height="250" autoplay loop></video>
+                    </div>
+                    <div class="basis-1/8 rounded-lg border-4 border-cs-brown ml-10 ">
+                        <img alt="" id="classUrlGambar" class="w-[150px] h-[150px]">
+                    </div>
+                    <div class="basis-1/4 ml-20 mt-30">
+                        <div class="font-bold text-7xl" id="classAbjad">
+
+                        </div>
+                        <div class="mt-2 text-justify" id="classDeskripsi">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="flex px-10 gap-10 mx-20 justify-center flex-wrap py-10">
+                <a class="abjad-button  h-[150px] relative flex justify-center items-center mb-10 transition duration-150 ease-in-out transform hover:scale-125"
+                    href="">
+                    <div>
+                        <img src="/static/images/abjad/w.jpg"
+                            class="w-[150px] h-[150px] relative rounded-lg brightness-[1.6] opacity-75">
+                    </div>
+                    <div class="absolute font-semibold text-center text-3xl">
+                        A
+                    </div>
+                </a>
+                <a
+                    class="abjad-button  h-[150px] relative flex justify-center items-center mb-10 transition duration-150 ease-in-out transform hover:scale-125">
+                    <div>
+                        <img src="/static/images/abjad/w.jpg"
+                            class="w-[150px] h-[150px] relative rounded-lg brightness-[1.6] opacity-75">
+                    </div>
+                    <div class="absolute font-semibold text-center text-3xl">
+                        B
+                    </div>
+                </a>
+                <button
+                    class="abjad-button h-[150px] relative flex justify-center items-center mb-10 transition duration-150 ease-in-out transform hover:scale-125"
+                    href="abjad.html" id="3" dataCustom="3">
+                    <div>
+                        <img src="https://storage.googleapis.com/sibiku-buckets/abjad/c.jpg"
+                            class="w-[150px] h-[150px] relative rounded-lg brightness-[1.6] opacity-75">
+                    </div>
+                    <div class="absolute font-semibold text-center text-3xl">
+                        C
+                    </div>
+                </button>
+                <a
+                    class="abjad-button h-[150px] relative flex justify-center items-center mb-10 transition duration-150 ease-in-out transform hover:scale-125">
+                    <div>
+                        <img src="/static/images/abjad/w.jpg"
+                            class="w-[150px] h-[150px] relative rounded-lg brightness-[1.6] opacity-75">
+                    </div>
+                    <div class="absolute font-semibold text-center text-3xl">
+                        D
+                    </div>
+                </a>
+                <a
+                    class="abjad-button h-[150px] relative flex justify-center items-center mb-10 transition duration-150 ease-in-out transform hover:scale-125">
+                    <div>
+                        <img src="/static/images/abjad/w.jpg"
+                            class="w-[150px] h-[150px] relative rounded-lg brightness-[1.6] opacity-75">
+                    </div>
+                    <div class="absolute font-semibold text-center text-3xl">
+                        E
+                    </div>
+                </a>
+                <a
+                    class="abjad-button h-[150px] relative flex justify-center items-center mb-10 transition duration-150 ease-in-out transform hover:scale-125">
+                    <div>
+                        <img src="/static/images/abjad/w.jpg"
+                            class="w-[150px] h-[150px] relative rounded-lg brightness-[1.6] opacity-75">
+                    </div>
+                    <div class="absolute font-semibold text-center text-3xl">
+                        F
+                    </div>
+                </a>
+                <a
+                    class="abjad-button h-[150px] relative flex justify-center items-center mb-10 transition duration-150 ease-in-out transform hover:scale-125">
+                    <div>
+                        <img src="/static/images/abjad/w.jpg"
+                            class="w-[150px] h-[150px] relative rounded-lg brightness-[1.6] opacity-75">
+                    </div>
+                    <div class="absolute font-semibold text-center text-3xl">
+                        G
+                    </div>
+                </a>
+                <a
+                    class="abjad-button h-[150px] relative flex justify-center items-center mb-10 transition duration-150 ease-in-out transform hover:scale-125">
+                    <div>
+                        <img src="/static/images/abjad/w.jpg"
+                            class="w-[150px] h-[150px] relative rounded-lg brightness-[1.6] opacity-75">
+                    </div>
+                    <div class="absolute font-semibold text-center text-3xl">
+                        H
+                    </div>
+                </a>
+                <a
+                    class="abjad-button h-[150px] relative flex justify-center items-center mb-10 transition duration-150 ease-in-out transform hover:scale-125">
+                    <div>
+                        <img src="/static/images/abjad/w.jpg"
+                            class="w-[150px] h-[150px] relative rounded-lg brightness-[1.6] opacity-75">
+                    </div>
+                    <div class="absolute font-semibold text-center text-3xl">
+                        I
+                    </div>
+                </a>
+                <a
+                    class="abjad-button h-[150px] relative flex justify-center items-center mb-10 transition duration-150 ease-in-out transform hover:scale-125">
+                    <div>
+                        <img src="/static/images/abjad/w.jpg"
+                            class="w-[150px] h-[150px] relative rounded-lg brightness-[1.6] opacity-75">
+                    </div>
+                    <div class="absolute font-semibold text-center text-3xl">
+                        J
+                    </div>
+                </a>
+                <a
+                    class="abjad-button h-[150px] relative flex justify-center items-center mb-10 transition duration-150 ease-in-out transform hover:scale-125">
+                    <div>
+                        <img src="/static/images/abjad/w.jpg"
+                            class="w-[150px] h-[150px] relative rounded-lg brightness-[1.6] opacity-75">
+                    </div>
+                    <div class="absolute font-semibold text-center text-3xl">
+                        K
+                    </div>
+                </a>
+                <a
+                    class="abjad-button h-[150px] relative flex justify-center items-center mb-10 transition duration-150 ease-in-out transform hover:scale-125">
+                    <div>
+                        <img src="/static/images/abjad/w.jpg"
+                            class="w-[150px] h-[150px] relative rounded-lg brightness-[1.6] opacity-75">
+                    </div>
+                    <div class="absolute font-semibold text-center text-3xl">
+                        L
+                    </div>
+                </a>
+                <a
+                    class="abjad-button h-[150px] relative flex justify-center items-center mb-10 transition duration-150 ease-in-out transform hover:scale-125">
+                    <div>
+                        <img src="/static/images/abjad/w.jpg"
+                            class="w-[150px] h-[150px] relative rounded-lg brightness-[1.6] opacity-75">
+                    </div>
+                    <div class="absolute font-semibold text-center text-3xl">
+                        M
+                    </div>
+                </a>
+                <a
+                    class="abjad-button h-[150px] relative flex justify-center items-center mb-10 transition duration-150 ease-in-out transform hover:scale-125">
+                    <div>
+                        <img src="/static/images/abjad/w.jpg"
+                            class="w-[150px] h-[150px] relative rounded-lg brightness-[1.6] opacity-75">
+                    </div>
+                    <div class="absolute font-semibold text-center text-3xl">
+                        N
+                    </div>
+                </a>
+                <a
+                    class="abjad-button h-[150px] relative flex justify-center items-center mb-10 transition duration-150 ease-in-out transform hover:scale-125">
+                    <div>
+                        <img src="/static/images/abjad/w.jpg"
+                            class="w-[150px] h-[150px] relative rounded-lg brightness-[1.6] opacity-75">
+                    </div>
+                    <div class="absolute font-semibold text-center text-3xl">
+                        O
+                    </div>
+                </a>
+                <a
+                    class="abjad-button h-[150px] relative flex justify-center items-center mb-10 transition duration-150 ease-in-out transform hover:scale-125">
+                    <div>
+                        <img src="/static/images/abjad/w.jpg"
+                            class="w-[150px] h-[150px] relative rounded-lg brightness-[1.6] opacity-75">
+                    </div>
+                    <div class="absolute font-semibold text-center text-3xl">
+                        P
+                    </div>
+                </a>
+                <a
+                    class="abjad-button h-[150px] relative flex justify-center items-center mb-10 transition duration-150 ease-in-out transform hover:scale-125">
+                    <div>
+                        <img src="/static/images/abjad/w.jpg"
+                            class="w-[150px] h-[150px] relative rounded-lg brightness-[1.6] opacity-75">
+                    </div>
+                    <div class="absolute font-semibold text-center text-3xl">
+                        Q
+                    </div>
+                </a>
+                <a
+                    class="abjad-button h-[150px] relative flex justify-center items-center mb-10 transition duration-150 ease-in-out transform hover:scale-125">
+                    <div>
+                        <img src="/static/images/abjad/w.jpg"
+                            class="w-[150px] h-[150px] relative rounded-lg brightness-[1.6] opacity-75">
+                    </div>
+                    <div class="absolute font-semibold text-center text-3xl">
+                        R
+                    </div>
+                </a>
+                <a
+                    class="abjad-button h-[150px] relative flex justify-center items-center mb-10 transition duration-150 ease-in-out transform hover:scale-125">
+                    <div>
+                        <img src="/static/images/abjad/w.jpg"
+                            class="w-[150px] h-[150px] relative rounded-lg brightness-[1.6] opacity-75">
+                    </div>
+                    <div class="absolute font-semibold text-center text-3xl">
+                        S
+                    </div>
+                </a>
+                <a
+                    class="abjad-button h-[150px] relative flex justify-center items-center mb-10 transition duration-150 ease-in-out transform hover:scale-125">
+                    <div>
+                        <img src="/static/images/abjad/w.jpg"
+                            class="w-[150px] h-[150px] relative rounded-lg brightness-[1.6] opacity-75">
+                    </div>
+                    <div class="absolute font-semibold text-center text-3xl">
+                        T
+                    </div>
+                </a>
+                <a
+                    class="abjad-button h-[150px] relative flex justify-center items-center mb-10 transition duration-150 ease-in-out transform hover:scale-125">
+                    <div>
+                        <img src="/static/images/abjad/w.jpg"
+                            class="w-[150px] h-[150px] relative rounded-lg brightness-[1.6] opacity-75">
+                    </div>
+                    <div class="absolute font-semibold text-center text-3xl">
+                        U
+                    </div>
+                </a>
+                <a
+                    class="abjad-button h-[150px] relative flex justify-center items-center mb-10 transition duration-150 ease-in-out transform hover:scale-125">
+                    <div>
+                        <img src="/static/images/abjad/w.jpg"
+                            class="w-[150px] h-[150px] relative rounded-lg brightness-[1.6] opacity-75">
+                    </div>
+                    <div class="absolute font-semibold text-center text-3xl">
+                        V
+                    </div>
+                </a>
+                <button
+                    class="abjad-button h-[150px] relative flex justify-center items-center mb-10 transition duration-150 ease-in-out transform hover:scale-125"
+                    href="abjad.html" id="21" dataCustom="21">
+                    <div>
+                        <img src="https://storage.googleapis.com/sibiku-buckets/abjad/w.jpg"
+                            class="w-[150px] h-[150px] relative rounded-lg brightness-[1.6] opacity-75">
+                    </div>
+                    <div class="absolute font-semibold text-center text-3xl">
+                        W
+                    </div>
+                </button>
+                <a
+                    class="abjad-button h-[150px] relative flex justify-center items-center mb-10 transition duration-150 ease-in-out transform hover:scale-125">
+                    <div>
+                        <img src="/static/images/abjad/w.jpg"
+                            class="w-[150px] h-[150px] relative rounded-lg brightness-[1.6] opacity-75">
+                    </div>
+                    <div class="absolute font-semibold text-center text-3xl">
+                        X
+                    </div>
+                </a>
+                <a
+                    class="abjad-button h-[150px] relative flex justify-center items-center mb-10 transition duration-150 ease-in-out transform hover:scale-125">
+                    <div>
+                        <img src="/static/images/abjad/w.jpg"
+                            class="w-[150px] h-[150px] relative rounded-lg brightness-[1.6] opacity-75">
+                    </div>
+                    <div class="absolute font-semibold text-center text-3xl">
+                        Y
+                    </div>
+                </a>
+                <a
+                    class="abjad-button h-[150px] relative flex justify-center items-center mb-10 transition duration-150 ease-in-out transform hover:scale-125">
+                    <div>
+                        <img src="/static/images/abjad/w.jpg"
+                            class="w-[150px] h-[150px] relative rounded-lg brightness-[1.6] opacity-75">
+                    </div>
+                    <div class="absolute font-semibold text-center text-3xl">
+                        Z
+                    </div>
+                </a>
+            </div>
+        </section>
+        <!-- video capture -->
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="/static/js/abjad.js"></script>
+        <footer class="bg-cs-brown bottom-0 w-full">
+            <p class="text-center">
+                Copyright Sukoshi
+            </p>
+        </footer>
+    </section>
+</body>
+
+</html>

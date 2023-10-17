@@ -35,12 +35,10 @@ $(document).ready(function() {
             .then(response => response.json())
             .then(data => {
                 const resultElement = document.getElementById('result');
-                const resultElement2 = document.getElementById('result2');
-                const resultElement3 = document.getElementById('result3');
                 if (data.message === 'success') {
-                    resultElement.textContent = `Prediksi: ${data.result}`;
-                    resultElement2.textContent = `ID: ${data.id}`;
-                    resultElement3.textContent = `Skor: ${data.score}`;
+                    resultElement.textContent = `Hasil Prediksi Abjad : ${data.result}`;
+                    document.getElementById("resultclassify").classList.remove("hidden");
+                    document.getElementById("resultclassify").classList.add("flex");
                 } else {
                     resultElement.textContent = 'Prediksi gagal.';
                 }
@@ -51,24 +49,3 @@ $(document).ready(function() {
         }, "image/jpeg");
     });
 });
-
-// $.ajax({
-            //     url: "https://sibi-prediction-bjvdoiweyq-et.a.run.app/predict", // Ganti dengan URL endpoint yang sesuai
-            //     type: "POST",
-            //     data: formData,
-            //     contentType: false,
-            //     processData: false,
-            //     success: function(response) {
-            //         // Tampilkan hasil deteksi objek di halaman
-            //         var result_div = $("#result");
-            //         result_div.empty();
-            //         response.forEach(function(obj) {
-            //             var class_id = obj.class_id;
-            //             var confidence = obj.confidence;
-            //             result_div.append(`<p>Class ID: ${class_id}, Confidence: ${confidence}</p>`);
-            //         });
-            //     },
-            //     error: function(error) {
-            //         alert("Error occurred: " + error.statusText);
-            //     }
-            // });

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/dist/output.css" rel="stylesheet">
+    <title>Classi.fy</title>
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="bg-cs-brown flex justify-around items-center">
+        <h1 class="text-3xl font-semibold">SIBIku</h1>
+        <div class="flex">
+            <a href="index.html" class="p-8 hover:bg-cs-light-brown transition ease-in-out">Beranda</a>
+            <a href="about.html" class="p-8 hover:bg-cs-light-brown transition ease-in-out">Tentang</a>
+            <a href="classify.html" class="p-8 hover:bg-cs-light-brown transition ease-in-out">Belajar SIBI</a>
+            <a href="quiz.html" class="p-8 hover:bg-cs-light-brown transition ease-in-out">Kuis</a>
+            <!-- <a href="/" class="p-8 hover:bg-cs-light-brown transition ease-in-out">Home</a> -->
+            <!-- <a href="{{ url_for('about') }}" class="p-8 hover:bg-cs-light-brown transition ease-in-out">About</a>
+            <a href="/abjad.html" class="p-8 hover:bg-cs-light-brown transition ease-in-out">Classify</a> -->
+        </div>
+    </nav>
+    <!-- content -->
+    <section class="bg-cs-sp-light-brown min-h-[80vh]">
+        <section class="bg-cs-light-brown p-2">
+            <div class="font-semibold text-4xl text-center pt-5 mb-5" id="belajar-bentuk">
+                Belajar SIBI!
+            </div>
+            <div class="basis-1/2 text-lg text-center justify-center mb-5">
+                Bisa menggunakan kamera lalu klik tombol "Mulai Deteksi" untuk memulai deteksi.
+                atau
+                Juga bisa menggunakan file gambar yg diupload pada tombol "Choose File" lalu klik tombol "Submit File"
+            </div>
+        </section>
+        <section class="bg-cs-sp-light-brown">
+            <div class="text-2xl justify-center font-semibold text-center mt-5">
+                Deteksi dengan Kamera!
+            </div>
+            <div class="flex justify-center w-full items-center">
+                <div class="flex flex-row">
+                    <div class="basis-1/2 m-20">
+                        <video id="video" width="640" height="480" autoplay
+                            class="rounded-lg border-4 border-cs-brown "></video>
+                    </div>
+                    <div class="basis-1/2 mt-20 flex flex-row">
+                        <div class="basis-1/2">
+                            <button class="bg-cs-brown text-white rounded-lg px-4 py-2 mt-4 hover:bg-cs-light-brown"
+                                id="capture-button">Mulai Deteksi</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="bg-cs-light-brown justify-center w-full items-center p-5 hidden" id="resultclassify">
+            <div id="result" class="font-semibold text-3xl"></div>
+        </div>
+        <section class="bg-cs-sp-light-brown">
+            <div class="text-2xl justify-center font-semibold text-center mt-5">
+                Pilih Filemu!
+            </div>
+
+            <div class="flex justify-center items-center p-20 w-full">
+                <div class="basis-1/4 ml-40">
+                    <img id="image-upload"
+                        class="rounded-lg border-4 border-cs-brown aspect-square w-{500px} h-{500px}">
+                </div>
+                <div class="basis-1/2 ml-20">
+                    <div class="basis-1/4">
+                        <input type="file" name="myFile" id="input-file" class=" text-sm
+                            file:py-2 file:px-4
+                            file:rounded-lg file:border-0
+                            file:text-sm
+                            file:bg-cs-brown hover:file:bg-cs-light-brown hover:file:cursor-pointer">
+                    </div>
+                    <div class="basis-1/4 mt-10">
+                        <button class="bg-cs-brown text-white rounded-lg px-4 py-2 hover:bg-cs-light-brown"
+                            id="capture-image">Submit File</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!-- <script src="/static/js/index.js"></script> -->
+        <script src="/static/js/fileupload.js"></script>
+    </section>
+    <footer class="bg-cs-brown bottom-0 w-full">
+        <p class="text-center">
+            Copyright Sukoshi
+        </p>
+    </footer>
+</body>
+
+</html>
