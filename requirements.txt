@@ -1,7 +1,7 @@
 Flask
 gunicorn
 numpy
-opencv-python
+opencv-python==4.8.1
 joblib
 pillow
 Werkzeug
