@@ -1,7 +1,7 @@
 Flask
 gunicorn
 numpy
-cv2==4.8.1
+cv2
 joblib
 pillow
 Werkzeug
