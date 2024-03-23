@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../static/dist/output.css" rel="stylesheet">
     <title>Document</title>
 </head>
+
 <body>
     <!-- navbar -->
-    <nav class="bg-cs-brown flex justify-around items-center">
-        <h1 class="text-3xl font-semibold">SIBIku</h1>
+    <nav class="z-10 flex items-center justify-around bg-cs-brown">
+        <h1 class="text-4xl font-semibold text-cs-brown-black">SIBI<span class="text-cs-brown-whites">ku</span></h1>
         <div class="flex">
-            <a href="../../templates/index.html" class="p-8 hover:bg-cs-light-brown transition ease-in-out">Home</a>
-            <a href="/templates/html/about.html" class="p-8 hover:bg-cs-light-brown transition ease-in-out">About</a>
-            <a href="" class="p-8 hover:bg-cs-light-brown transition ease-in-out">Classify</a>
+            <!-- <a href="index.html" class="p-8 font-semibold transition ease-in-out hover:bg-cs-light-brown">Beranda</a>
+            <a href="about.html" class="p-8 font-semibold transition ease-in-out hover:bg-cs-light-brown">Tentang</a>
+            <a href="classify.html" class="p-8 font-semibold transition ease-in-out hover:bg-cs-light-brown">Belajar SIBI</a> -->
+            <a href="{{ url_for('index') }}"
+                class="p-8 font-semibold transition ease-in-out hover:bg-cs-light-brown">Beranda</a>
+            <a href="{{ url_for('about') }}"
+                class="p-8 font-semibold transition ease-in-out hover:bg-cs-light-brown">Tentang</a>
+            <a href="{{ url_for('classify') }}"
+                class="p-8 font-semibold transition ease-in-out hover:bg-cs-light-brown">Belajar SIBI</a>
         </div>
     </nav>
     <!-- content -->
     <section class="bg-cs-sp-light-brown">
-        
+
         <div class="flex flex-row justify-center items-center min-h-[90vh]">
-            <div class="rounded-lg border-4 border-cs-brown">
+            <div class="border-4 rounded-lg border-cs-brown">
                 <img alt="" id="classUrlGambar">
             </div>
-            <div class="basis-1/4 ml-20 mt-30 ">
+            <div class="ml-20 basis-1/4 mt-30 ">
                 <div class="font-bold text-7xl" id="classAbjad">
 
                 </div>
@@ -31,16 +39,17 @@
                     Cara membuat bentuknya adalah :
                 </div>
                 <div class="mt-2 text-justify" id="classDeskripsi">
-                    
+
                 </div>
             </div>
         </div>
     </section>
-    <footer class="bg-cs-brown bottom-0 w-full">
+    <footer class="bottom-0 w-full bg-cs-brown">
         <p class="text-center">
             Copyright Sukoshi
         </p>
     </footer>
-    <script src="./js/detail.js"></script>
+    <!-- <script src="./js/detail.js"></script> -->
+    
 </body>
 </html>

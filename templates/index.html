@@ -10,51 +10,68 @@
 
 <body>
     <!-- navbar -->
-    <nav class="bg-cs-brown flex justify-around items-center">
-        <h1 class="text-3xl font-semibold">SIBIku</h1>
+    <nav class="z-10 flex items-center justify-around bg-cs-brown">
+        <h1 class="text-4xl font-semibold text-cs-brown-black">SIBI<span class="text-cs-brown-whites">ku</span></h1>
         <div class="flex">
-
-            <a href="index.html" class="p-8 hover:bg-cs-light-brown transition ease-in-out">Beranda</a>
-            <a href="about.html" class="p-8 hover:bg-cs-light-brown transition ease-in-out">Tentang</a>
-            <a href="classify.html" class="p-8 hover:bg-cs-light-brown transition ease-in-out">Belajar SIBI</a>
-            <a href="quiz.html" class="p-8 hover:bg-cs-light-brown transition ease-in-out">Kuis</a>
-            <!-- <a href="/" class="p-8 hover:bg-cs-light-brown transition ease-in-out">Home</a> -->
-            <!-- <a href="{{ url_for('about') }}" class="p-8 hover:bg-cs-light-brown transition ease-in-out">About</a>
-            <a href="/abjad.html" class="p-8 hover:bg-cs-light-brown transition ease-in-out">Classify</a> -->
+            <!-- <a href="index.html" class="p-8 font-semibold transition ease-in-out hover:bg-cs-light-brown">Beranda</a>
+            <a href="about.html" class="p-8 font-semibold transition ease-in-out hover:bg-cs-light-brown">Tentang</a>
+            <a href="classify.html" class="p-8 font-semibold transition ease-in-out hover:bg-cs-light-brown">Belajar SIBI</a> -->
+            <a href="{{ url_for('index') }}"
+                class="p-8 font-semibold transition ease-in-out hover:bg-cs-light-brown">Beranda</a>
+            <a href="{{ url_for('about') }}"
+                class="p-8 font-semibold transition ease-in-out hover:bg-cs-light-brown">Tentang</a>
+            <a href="{{ url_for('classify') }}"
+                class="p-8 font-semibold transition ease-in-out hover:bg-cs-light-brown">Belajar SIBI</a>
         </div>
     </nav>
     <!-- content -->
-    <section class="bg-cs-sp-light-brown min-h-[90vh]">
-        <div class="flex flex-row w-full items-center">
-            <div class="basis-1/2 py-5 mx-40">
-                <div class="mt-44 font-semibold text-7xl">
-                    SIBIku
+    <section class="bg-cs-sp-light-brown min-h-[90vh] relative overflow-hidden">
+        <div class="flex flex-row w-full">
+            <div class="absolute bottom-0 left-0 w-full">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                    <path fill="#CEAB93" fill-opacity="1"
+                        d="M0,192L40,208C80,224,160,256,240,240C320,224,400,160,480,160C560,160,640,224,720,234.7C800,245,880,203,960,181.3C1040,160,1120,160,1200,176C1280,192,1360,224,1400,240L1440,256L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z">
+                    </path>
+                </svg>
+            </div>
+            <div class="py-5 mx-20 basis-1/2">
+                <div class="font-semibold mt-44 text-7xl text-cs-brown-whites">
+                    SIBI<span class="text-cs-brown-black">ku</span>
                 </div>
-                <div class="mt-2 text-justify text-xl">
+                <div class="mt-2 text-xl font-medium text-justify">
                     Pelajari abjad pada Sistem Isyarat Bahasa Indonesia (SIBI) dengan mudah dan menyenangkan!
                 </div>
                 <ul class="flex flex-row mt-5 font-semibold">
-                    <li>                       
-                        <a href="{{ url_for('about') }}" class="mr-10 flex rounded-lg bg-cs-brown p-3 hover:bg-cs-light-brown transition ease-in-out duration-150 transform hover:scale-125">
-                            <svg class="mx-2 w-6 h-6"xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                              </svg> 
+                    <li>
+                        <a href="{{ url_for('about') }}"
+                            class="flex p-3 mr-10 transition duration-150 ease-in-out transform rounded-lg bg-cs-brown hover:bg-cs-light-brown hover:scale-125">
+                            <svg class="w-6 h-6 mx-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                            </svg>
                             <div class="whitespace-nowrap">
-                               |  Mulai !</div>
+                                | Mulai !</div>
                         </a>
                     </li>
                 </ul>
             </div>
-            <div class="basis-1/2 mt-32 flex items-center">
-                <img src="/static/images/ocnizarhandnobg.png" alt="" class="rounded-full w-[500px] h-[500px] bg-cs-brown transition duration-150 ease-in-out transform hover:scale-105">
+            <div class="relative z-0 flex items-center min-h-screen basis-1/2">
+                <img src="/static/images/ocnizars.png" alt=""
+                    class="absolute top-0 bottom-0 left-0 right-0 object-cover w-full h-full bg-cs-light-brown" />
+
             </div>
+
         </div>
+
     </section>
-    <footer class="bg-cs-brown bottom-0 w-full">
+
+    <footer class="sticky bottom-0 w-full bg-cs-brown">
         <p class="text-center">
             Copyright Sukoshi
         </p>
     </footer>
+    <script src="static/js/async.js"></script>
 </body>
 
 </html>

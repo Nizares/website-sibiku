@@ -10,86 +10,163 @@
 
 <body>
     <!-- navbar -->
-    <nav class="bg-cs-brown flex justify-around items-center">
-        <h1 class="text-3xl font-semibold">SIBIku</h1>
+    <nav class="sticky top-0 z-10 flex items-center justify-around bg-cs-brown">
+        <h1 class="text-4xl font-semibold text-cs-brown-black">SIBI<span class="text-cs-brown-whites">ku</span></h1>
         <div class="flex">
-            <a href="index.html" class="p-8 hover:bg-cs-light-brown transition ease-in-out">Beranda</a>
-            <a href="about.html" class="p-8 hover:bg-cs-light-brown transition ease-in-out">Tentang</a>
-            <a href="classify.html" class="p-8 hover:bg-cs-light-brown transition ease-in-out">Belajar SIBI</a>
-            <a href="quiz.html" class="p-8 hover:bg-cs-light-brown transition ease-in-out">Kuis</a>
-            <!-- <a href="/" class="p-8 hover:bg-cs-light-brown transition ease-in-out">Home</a> -->
-            <!-- <a href="{{ url_for('about') }}" class="p-8 hover:bg-cs-light-brown transition ease-in-out">About</a>
-            <a href="/abjad.html" class="p-8 hover:bg-cs-light-brown transition ease-in-out">Classify</a> -->
+            <!-- <a href="index.html" class="p-8 font-semibold transition ease-in-out hover:bg-cs-light-brown">Beranda</a>
+            <a href="about.html" class="p-8 font-semibold transition ease-in-out hover:bg-cs-light-brown">Tentang</a>
+            <a href="classify.html" class="p-8 font-semibold transition ease-in-out hover:bg-cs-light-brown">Belajar SIBI</a> -->
+            <a href="{{ url_for('index') }}"
+                class="p-8 font-semibold transition ease-in-out hover:bg-cs-light-brown">Beranda</a>
+            <a href="{{ url_for('about') }}"
+                class="p-8 font-semibold transition ease-in-out hover:bg-cs-light-brown">Tentang</a>
+            <a href="{{ url_for('classify') }}"
+                class="p-8 font-semibold transition ease-in-out hover:bg-cs-light-brown">Belajar SIBI</a>
         </div>
     </nav>
     <!-- content -->
     <section class="bg-cs-sp-light-brown min-h-[80vh]">
-        <section class="bg-cs-light-brown p-2">
-            <div class="font-semibold text-4xl text-center pt-5 mb-5" id="belajar-bentuk">
+        <section class="p-2 bg-cs-light-brown">
+            <div class="pt-5 mb-5 text-4xl font-semibold text-center" id="belajar-bentuk">
                 Belajar SIBI!
             </div>
-            <div class="basis-1/2 text-lg text-center justify-center mb-5">
-                Bisa menggunakan kamera lalu klik tombol "Mulai Deteksi" untuk memulai deteksi.
-                atau
-                Juga bisa menggunakan file gambar yg diupload pada tombol "Choose File" lalu klik tombol "Submit File"
-            </div>
+            <section class="bg-cs-light-brown" id="id-invisi">
+                </div>
+                <div class="flex flex-row w-full ">
+                    <div class="pb-10 ml-20 basis-1/2">
+                        <div class="text-2xl font-semibold">
+                            Cara Pertama
+                        </div>
+                        <div class="mt-1 text-lg font-medium text-justify">
+                            Menggunakan kamera untuk deteksi abjad SIBI.
+                        </div>
+                        <ul class="ml-5">
+                            <li>
+                                <div class="mt-1 text-lg font-medium text-justify">
+                                    1. Jika menggunakan kamera, pastikan kamera sudah diizinkan untuk digunakan.
+                                </div>
+                            </li>
+                            <li>
+                                <div class="text-lg font-medium text-justify ">
+                                    2. Jika sudah aktif, arahkan jari yang berbentuk abjad bahasa isyarat masuk kedalam kotak warna hijau.
+                                </div>
+                            </li>
+                            <li>
+                                <div class="text-lg font-medium text-justify ">
+                                    3. Klik tombol "Mulai Deteksi" untuk memulai deteksi.
+                                </div>
+                            </li>
+                            <li>
+                                <div class="text-lg font-medium text-justify ">
+                                    4. Tunggu hasil deteksi muncul pada layar.
+                                </div>
+                            </li>
+                            <li>
+                                <div class="text-lg font-medium text-justify ">
+                                    5. Atau bisa melihat referensi penggunaan kamera bisa lihat gambar di sebelah kanan.
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="flex flex-row mt-2 font-semibold">
+                            <li>
+                                <a href="#detekkamera"
+                                    class="flex p-3 mr-10 transition duration-150 ease-in-out transform rounded-lg bg-cs-brown hover:bg-cs-sp-light-brown hover:scale-25">
+                                    <svg class="w-6 h-6 mx-2" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                                    </svg>
+                                    <div class="font-bold whitespace-nowrap">
+                                        | Klik untuk Mencoba !</div>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div class="mt-5 text-2xl font-semibold">
+                            Cara Kedua
+                        </div>
+                        <div class="mt-1 text-lg font-medium text-justify">
+                            Menggunakan file gambar yg diupload pada tombol "Choose File" lalu klik tombol
+                            "Submit File" yang ada di bawah cara pertama.
+                        </div>
+                        <ul class="flex flex-row mt-2 font-semibold">
+                            <li>
+                                <a href="#pilihfel"
+                                    class="flex p-3 mr-10 transition duration-150 ease-in-out transform rounded-lg bg-cs-brown hover:bg-cs-sp-light-brown hover:scale-25">
+                                    <svg class="w-6 h-6 mx-2" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                                    </svg>
+                                    <div class="font-bold whitespace-nowrap">
+                                        | Klik untuk Mencoba !</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pb-10 mx-20 my-5 basis-1/2">
+                        <div class="">
+                            <img src="/static/images/ocnizarhand.png" alt=""
+                                class="object-contain rounded-lg w-full h-[300px] bg-cs-brown transition duration-150 ease-in-out transform hover:scale-105">
+                        </div>
+                    </div>
+                </div>
+            </section>
         </section>
         <section class="bg-cs-sp-light-brown">
-            <div class="text-2xl justify-center font-semibold text-center mt-5">
+            <div class="justify-center mt-5 text-2xl font-semibold text-center" id="detekkamera">
                 Deteksi dengan Kamera!
             </div>
-            <div class="flex justify-center w-full items-center">
+            <div class="flex items-center justify-center w-full">
                 <div class="flex flex-row">
-                    <div class="basis-1/2 m-20">
-                        <video id="video" width="640" height="480" autoplay
-                            class="rounded-lg border-4 border-cs-brown "></video>
+                    <div class="m-20 basis-1/2">
+                        <!-- <img id="croppedImage" class="hidden border-4 rounded-lg border-cs-brown" alt="Cropped Image"> -->
+                        <img id="image" width="800" height="600" class="border-4 rounded-lg border-cs-brown"
+                            src="{{ url_for('takepicture') }}">
                     </div>
-                    <div class="basis-1/2 mt-20 flex flex-row">
+                    <div class="flex flex-row mt-20 basis-1/2">
                         <div class="basis-1/2">
-                            <button class="bg-cs-brown text-white rounded-lg px-4 py-2 mt-4 hover:bg-cs-light-brown"
+                            <button class="px-4 py-2 mt-4 text-white rounded-lg bg-cs-brown hover:bg-cs-light-brown"
                                 id="capture-button">Mulai Deteksi</button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <div class="bg-cs-light-brown justify-center w-full items-center p-5 hidden" id="resultclassify">
-            <div id="result" class="font-semibold text-3xl"></div>
+        <div class="items-center justify-center hidden w-full p-5 bg-cs-light-brown" id="resultclassify">
+            <div id="result" class="text-3xl font-semibold"></div>
         </div>
-        <section class="bg-cs-sp-light-brown">
-            <div class="text-2xl justify-center font-semibold text-center mt-5">
+        <section class="bg-cs-sp-light-brown" id="pilihfel">
+            <div class="justify-center mt-5 text-2xl font-semibold text-center">
                 Pilih Filemu!
             </div>
-
-            <div class="flex justify-center items-center p-20 w-full">
-                <div class="basis-1/4 ml-40">
+            <div class="flex items-center justify-center w-full p-20">
+                <div class="ml-40 basis-1/4">
                     <img id="image-upload"
                         class="rounded-lg border-4 border-cs-brown aspect-square w-{500px} h-{500px}">
                 </div>
-                <div class="basis-1/2 ml-20">
+                <div class="ml-20 basis-1/2">
                     <div class="basis-1/4">
-                        <input type="file" name="myFile" id="input-file" class=" text-sm
-                            file:py-2 file:px-4
-                            file:rounded-lg file:border-0
-                            file:text-sm
-                            file:bg-cs-brown hover:file:bg-cs-light-brown hover:file:cursor-pointer">
+                        <input type="file" name="myFile" id="input-file"
+                            class="text-sm file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:bg-cs-brown hover:file:bg-cs-light-brown hover:file:cursor-pointer">
                     </div>
-                    <div class="basis-1/4 mt-10">
-                        <button class="bg-cs-brown text-white rounded-lg px-4 py-2 hover:bg-cs-light-brown"
+                    <div class="mt-10 basis-1/4">
+                        <button class="px-4 py-2 text-white rounded-lg bg-cs-brown hover:bg-cs-light-brown"
                             id="capture-image">Submit File</button>
                     </div>
                 </div>
             </div>
         </section>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <!-- <script src="/static/js/index.js"></script> -->
+        <script src="/static/js/index.js"></script>
         <script src="/static/js/fileupload.js"></script>
     </section>
-    <footer class="bg-cs-brown bottom-0 w-full">
+    <footer class="bottom-0 w-full bg-cs-brown">
         <p class="text-center">
             Copyright Sukoshi
         </p>
     </footer>
+    
 </body>
 
 </html>

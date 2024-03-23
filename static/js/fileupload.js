@@ -18,7 +18,7 @@ captureImage.addEventListener("click", function() {
     var formData = new FormData();
     formData.append("file", selectedFile);
 
-    fetch('https://sibi-prediction-bjvdoiweyq-et.a.run.app/predict', {
+    fetch('https://backend-prediction-rel-tik7mr2eha-et.a.run.app/predict', {
         method: 'POST',
         body: formData
     })

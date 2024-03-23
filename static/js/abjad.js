@@ -8,9 +8,9 @@ document.addEventListener("DOMContentLoaded", function() {
             let id_abjad = dataCustom1;
 
             var formData = new FormData();
-            formData.append("id_abjad", id_abjad);
+            formData.append("field_id", id_abjad);
 
-            fetch('https://sibi-backend-bjvdoiweyq-et.a.run.app/detailabjad', {
+            fetch('https://sibi-backends-tik7mr2eha-et.a.run.app/detailabjad', {
                 method: 'POST',
                 body: formData
             })
