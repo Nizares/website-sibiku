@@ -5,7 +5,7 @@ import os
 
 
 app = Flask(__name__)
-cap = cv.VideoCapture(0)
+cap = cv.VideoCapture(1)
 
 def generate_frames():
     while True:
