@@ -18,6 +18,8 @@ document.addEventListener('DOMContentLoaded', function () {
         canvas.width = boundingBox.width;
         canvas.height = boundingBox.height;
 
+
+
         // Draw only the bounding box region
         context.drawImage(
             imageElement,
