@@ -5,9 +5,10 @@ import os
 
 
 app = Flask(__name__)
-cap = cv.VideoCapture(0,cv.CAP_DSHOW)
+
 
 def generate_frames():
+    cap = cv.VideoCapture(0,cv.CAP_DSHOW)
     while True:
         success, img = cap.read()
         if not success:
