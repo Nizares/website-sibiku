@@ -120,8 +120,14 @@
             <div class="flex items-center justify-center w-full">
                 <div class="flex flex-row">
                     <div class="m-20 basis-1/2">
-                        <video id="user-video" width="320" height="240" autoplay class="hidden"></video>
-                        <!-- <img id="croppedImage" class="hidden border-4 rounded-lg border-cs-brown" alt="Cropped Image"> -->
+                        <!-- <video id="user-video" width="320" height="240" autoplay class="hidden"></video> -->
+                        <!-- <div id="video-container" class="relative w-800 h-600">
+                            <video id="video" width="800" height="600" autoplay
+                            class="border-4 rounded-lg border-cs-brown "></video>
+                            <canvas id="bounding-box-overlay" class="absolute top-0 left-0 w-full h-full"></canvas>
+                        </div> -->
+
+                        <img id="croppedImage" class="hidden border-4 rounded-lg border-cs-brown" alt="Cropped Image">
                         <img id="image" width="800" height="600" class="border-4 rounded-lg border-cs-brown"
                             src="{{ url_for('takepicture') }}">
                     </div>
@@ -159,8 +165,8 @@
             </div>
         </section>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="/static/js/getmedia.js"></script>
-        <script src="/static/js/index.js"></script>
+        <!-- <script src="/static/js/getmedia.js"></script> -->
+        <script src="/static/js/index2.js"></script>
         <script src="/static/js/fileupload.js"></script>
     </section>
     <footer class="bottom-0 w-full bg-cs-brown">
