@@ -1,28 +1,31 @@
 $(document).ready(function() {
-    var video = document.getElementById("video");
     var canvas = document.createElement("canvas");
-    var ctx = canvas.getContext("2d");
     var boundingBoxCanvas = document.getElementById("bounding-box-overlay");
     var boundingBoxCtx = boundingBoxCanvas.getContext("2d");
     var captureButton = document.getElementById("capture-button");
     const croppedImageElement = document.getElementById('croppedImage');
 
-    navigator.mediaDevices.getUserMedia({ video: true, audio: false })
-        .then(function(stream) {
-            video.srcObject = stream;
-            video.play();
-            // Flip video horizontally
-            video.style.transform = 'scale(-1, 1)';
-            video.onloadedmetadata = function() {
-                canvas.width = video.videoWidth;
-                canvas.height = video.videoHeight;
-                drawBoundingBox(); // Call function to draw bounding box
-            };
-        })
-        .catch(function(err) {
-            console.error("Error accessing webcam: " + err);
-        });
-
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices.getUserMedia({ video: true, audio: false })
+            .then(function(stream) {
+                var video = document.getElementById("video");
+                video.srcObject = stream;
+                video.play();
+                // Flip video horizontally
+                video.style.transform = 'scale(-1, 1)';
+                video.onloadedmetadata = function() {
+                    canvas.width = video.videoWidth;
+                    canvas.height = video.videoHeight;
+                    drawBoundingBox(); // Call function to draw bounding box
+                };
+            })
+            .catch(function(err) {
+                console.error("Error accessing webcam: " + err);
+            });
+    } else {
+        // The browser does not support the getUserMedia API
+        console.error("Your browser does not support the getUserMedia API.");
+    }
     function drawBoundingBox() {
         // Menggambar bounding box pada elemen <canvas>
         boundingBoxCtx.clearRect(0, 0, boundingBoxCanvas.width, boundingBoxCanvas.height);
