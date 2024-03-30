@@ -48,7 +48,8 @@
                             </li>
                             <li>
                                 <div class="text-lg font-medium text-justify ">
-                                    2. Jika sudah aktif, arahkan jari yang berbentuk abjad bahasa isyarat masuk kedalam kotak warna hijau.
+                                    2. Jika sudah aktif, arahkan jari yang berbentuk abjad bahasa isyarat masuk kedalam
+                                    kotak warna hijau.
                                 </div>
                             </li>
                             <li>
@@ -117,26 +118,24 @@
             <div class="justify-center mt-5 text-2xl font-semibold text-center" id="detekkamera">
                 Deteksi dengan Kamera!
             </div>
-            <div class="flex items-center justify-center w-full">
-                <div class="flex flex-row">
-                    <div class="m-20 basis-1/2">
-                        <!-- <video id="user-video" width="320" height="240" autoplay class="hidden"></video> -->
-                        <!-- <div id="video-container" class="relative w-800 h-600">
+            <div class="w-full ">
+                <div class="flex flex-col">
+                    <div class="flex flex-row items-center justify-center m-20 basis-1/2">
+                        <div id="video-container" class="relative w-800 h-600">
                             <video id="video" width="800" height="600" autoplay
-                            class="border-4 rounded-lg border-cs-brown "></video>
-                            <canvas id="bounding-box-overlay" class="absolute top-0 left-0 w-full h-full"></canvas>
-                        </div> -->
-
-                        <img id="croppedImage" class="hidden border-4 rounded-lg border-cs-brown" alt="Cropped Image">
-                        <img id="image" width="800" height="600" class="border-4 rounded-lg border-cs-brown"
-                            src="{{ url_for('takepicture') }}">
-                    </div>
-                    <div class="flex flex-row mt-20 basis-1/2">
-                        <div class="basis-1/2">
+                                class="border-4 rounded-lg border-cs-brown "></video>
+                            <canvas id="bounding-box-overlay" class="absolute top-0 left-0" width="800" height="600"></canvas>
+                            
+                        </div>
+                        <div class="ml-10">
                             <button class="px-4 py-2 mt-4 text-white rounded-lg bg-cs-brown hover:bg-cs-light-brown"
                                 id="capture-button">Mulai Deteksi</button>
-                        </div>
+                        <img id="croppedImage" class="top-0 hidden mt-5 border-4 rounded-lg border-cs-brown" width="200" height="200" alt="Cropped Image">
+                        
                     </div>
+                        
+                    </div>
+                    
                 </div>
             </div>
         </section>
@@ -144,7 +143,7 @@
             <div id="result" class="text-3xl font-semibold"></div>
         </div>
         <section class="bg-cs-sp-light-brown" id="pilihfel">
-            <div class="justify-center mt-5 text-2xl font-semibold text-center">
+            <div class="justify-center mt-20 text-2xl font-semibold text-center">
                 Pilih Filemu!
             </div>
             <div class="flex items-center justify-center w-full p-20">
@@ -174,7 +173,7 @@
             Copyright Sukoshi
         </p>
     </footer>
-    
+
 </body>
 
 </html>

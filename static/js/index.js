@@ -1,58 +1,101 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const captureButton = document.getElementById('capture-button');
-    const imageElement = document.getElementById('image');
+$(document).ready(function() {
+    var video = document.getElementById("video");
+    var canvas = document.createElement("canvas");
+    var ctx = canvas.getContext("2d");
+    var boundingBoxCanvas = document.getElementById("bounding-box-overlay");
+    var boundingBoxCtx = boundingBoxCanvas.getContext("2d");
+    var captureButton = document.getElementById("capture-button");
     const croppedImageElement = document.getElementById('croppedImage');
 
-    captureButton.addEventListener('click', function () {
-        const canvas = document.createElement('canvas');
-        const context = canvas.getContext('2d');
-        
-        // Get the bounding box coordinates
-        width = 800;
-        height = 600;
-        const boundingBox = { left: 100, top: height / 4, width: 250, height: 250 };
+    navigator.mediaDevices.getUserMedia({ video: true, audio: false })
+        .then(function(stream) {
+            video.srcObject = stream;
+            video.play();
+            // Flip video horizontally
+            video.style.transform = 'scale(-1, 1)';
+            video.onloadedmetadata = function() {
+                canvas.width = video.videoWidth;
+                canvas.height = video.videoHeight;
+                drawBoundingBox(); // Call function to draw bounding box
+            };
+        })
+        .catch(function(err) {
+            console.error("Error accessing webcam: " + err);
+        });
 
-        // Set the canvas size to the bounding box size
-        canvas.width = 800;
-        canvas.height = 600;
+    function drawBoundingBox() {
+        // Menggambar bounding box pada elemen <canvas>
+        boundingBoxCtx.clearRect(0, 0, boundingBoxCanvas.width, boundingBoxCanvas.height);
+        boundingBoxCtx.strokeStyle = "green";
+        boundingBoxCtx.lineWidth = 3;
+        boundingBoxCtx.strokeRect(100, 130, 250, 250);
+    }
+
+    captureButton.addEventListener("click", function() {
+        // Mendefinisikan koordinat dan ukuran bounding box
+        var boundingBox = { x: video.videoWidth - 100 - 200, y: 110, width: 250, height: 250 };
+
+        // Mengambil gambar hanya dari bagian dalam bounding box
+        var croppedImage = captureImageFromVideo(video, boundingBox);
+
+        // Menampilkan gambar yang diambil
+        croppedImageElement.src = croppedImage;
+
+        // Mengirim gambar yang diambil ke backend
+        sendImageToBackend(croppedImage);
+    });
+
+    function captureImageFromVideo(video, boundingBox) {
+        // Create a <canvas> element with the same size as the bounding box
+        var canvas = document.createElement('canvas');
         canvas.width = boundingBox.width;
         canvas.height = boundingBox.height;
+    
+        // Get the context from the canvas
+        var ctx = canvas.getContext('2d');
+    
+        // Draw the inside of the bounding box into the <canvas>
+        ctx.drawImage(video, boundingBox.x, boundingBox.y, boundingBox.width, boundingBox.height, 0, 0, boundingBox.width, boundingBox.height);
+    
+        // Get the image from the <canvas> and return it as a data URL
+        return canvas.toDataURL("image/jpeg");
+    }
+    
+    // Fungsi untuk mengirim gambar ke backend
+    function sendImageToBackend(imageData) {
+        // Membuat blob dari data URL gambar
+        fetch(imageData)
+            .then(response => response.blob())
+            .then(blob => {
+                // Membuat file dari blob
+                var file = new File([blob], "captured_image.jpg", { type: "image/jpeg" });
 
-        // Draw only the bounding box region
-        context.drawImage(
-            imageElement,
-            boundingBox.left, boundingBox.top, boundingBox.width, boundingBox.height,
-            0, 0, canvas.width, canvas.height
-        );
+                // Membuat FormData dan mengirim file ke backend
+                var formData = new FormData();
+                formData.append("file", file);
 
-        // Get the cropped image data as a Blob
-        canvas.toBlob(function(blob) {
-            // Create FormData object and append the blob
-            const croppedImageUrl = URL.createObjectURL(blob);
-            const formData = new FormData();
-            formData.append('file', blob, 'cropped_image.jpg');
-
-            // Send the cropped image data to your API using fetch
-            fetch('https://backend-prediction-rel-tik7mr2eha-et.a.run.app/predict', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                const resultElement = document.getElementById('result');
-                if (data.message === 'success') {
-                    resultElement.textContent = `Hasil Prediksi Abjad : ${data.result}`;
-                    document.getElementById("resultclassify").classList.remove("hidden");
-                    document.getElementById("croppedImage").classList.remove("hidden");
-                    document.getElementById("resultclassify").classList.add("flex");
-                    croppedImageElement.src = croppedImageUrl;
-                } else {
-                    resultElement.textContent = 'Prediksi gagal.';
-                }
+                fetch('https://backend-prediction-rel-tik7mr2eha-et.a.run.app/predict', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    const resultElement = document.getElementById('result');
+                    if (data.message === 'success') {
+                        resultElement.textContent = `Hasil Prediksi Abjad : ${data.result}`;
+                        document.getElementById("resultclassify").classList.remove("hidden");
+                        document.getElementById("croppedImage").classList.remove("hidden");
+                        document.getElementById("resultclassify").classList.add("flex");
+                    } else {
+                        resultElement.textContent = 'Prediksi gagal.';
+                    }
+                })
+                .catch(error => {
+                    console.error('Terjadi kesalahan:', error);
+                });
             })
             .catch(error => {
-                console.error('Error:', error);
+                console.error('Terjadi kesalahan:', error);
             });
-        }, 'image/jpeg');
-    });
+    }
 });
