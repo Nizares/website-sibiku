@@ -1,6 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // mengambil elemen dari tombol abjad
     var abjadButtons = document.querySelectorAll(".abjad-button");
 
+    // fungsi ketika tombol abjad diklik
+    // menampilkan detail abjad yang dipilih dari database (menggunakan firebase)
+    // dengan mengirimkan id abjad yang dipilih
     abjadButtons.forEach(function(abjadButton) {
         abjadButton.addEventListener("click", function() {
             var dataCustom = abjadButton.getAttribute("dataCustom");
