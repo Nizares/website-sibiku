@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, jsonify, Response
 import numpy as np
-import cv2 as cv
 import os
 
 
