@@ -12,7 +12,8 @@ module.exports = {
       'cs-black': '#222222',
       'cs-white': '#F5F5F5',
       'cs-brown-black': '#261202',
-      'cs-brown-whites': '#784F31'
+      'cs-brown-whites': '#784F31',
+      'cs-red-white': '#B31312',
     },
     fontFamily: {
       'sans': ['Poppins', 'sans-serif']
