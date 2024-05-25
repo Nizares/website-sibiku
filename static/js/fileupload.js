@@ -21,6 +21,14 @@ captureImage.addEventListener("click", function() {
         console.error("Tidak ada file yang dipilih.");
         return;
     }
+    
+    if (selectedFile.size >= 2.5 * 1024 * 1024) {
+        // peringatan jika ukuran file terlalu besar
+        alertNoFile.classList.add("hidden");
+        alertFalseFormat.classList.remove("hidden");
+        console.error("Ukuran file terlalu besar.");
+        return;
+    }
 
     // file jadi FormData yang akan di proses oleh backend
     var formData = new FormData();
